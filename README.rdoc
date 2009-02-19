@@ -17,3 +17,10 @@ Install Rquote:
   <r:stocks:each for="goog,msft">
     <r:symbol /> <r:price /> <r:change /> <r:volume />
   </r:stocks:each>
+
+== Todo
+
+  - caching
+  - fork rquote and make it more object oriented
+  - fork rquote and give it support for other services (like Google Finance)
+  - tests
