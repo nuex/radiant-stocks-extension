@@ -20,7 +20,9 @@ module StocksTags
     stocks = Rquote.new.find(stocks)
     stocks.each do |stock|
       tag.locals.stock = stock
+      result << tag.expand
     end
+    result
   end
 
   [:symbol, :price, :change, :volume].each do |method|
