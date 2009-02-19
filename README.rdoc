@@ -1,0 +1,19 @@
+= Stocks Extension
+
+Show stock market quotes on your Radiant pages.
+
+== Installation
+
+Via Git Submodules:
+  
+  git submodule add git://github.com/nuex/radiant-stocks-extension.git vendor/extensions/stocks
+
+Install Rquote:
+
+  git submodule add git://github.com/johnyerhot/rquote.git vendor/plugins/rquote
+
+== Usage
+
+  <r:stocks:each for="goog,msft">
+    <r:symbol /> <r:price /> <r:change /> <r:volume />
+  </r:stocks:each>
