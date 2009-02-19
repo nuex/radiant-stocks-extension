@@ -3,7 +3,15 @@ module StocksTags
 
   class TagError < StandardError; end
 
+  desc %{
+    Namespace for referencing a stock.
+    Use the `for' attribute to reference a single stock.
+
+    *Usage:*
+    <pre><code><r:stocks [for="goog"]>...</r:stocks></code></pre>
+  }
   tag 'stocks' do |tag|
+    tag.locals.stock = Rquote.new.find(tag.attr['for'].split(',').first).first unless tag.attr.empty?
     tag.expand
   end
 
